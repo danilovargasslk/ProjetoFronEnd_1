@@ -74,8 +74,8 @@ Se você deseja contribuir com o projeto **Conecta Vaga Jovem**, siga os passos 
 ## Pessoas Desenvolvedoras
 
 *   Gabriel De Oliveira (RA: 2601184)
-*   Eduarda De Oliveira Neto (RA: 2565560)
-*   Danilo Silva Vargas
+*   Eduarda De Oliveira Neto (RA: 2768313)
+*   Danilo Silva Vargas (RA: 2565560)
 
 ## Licença
 
