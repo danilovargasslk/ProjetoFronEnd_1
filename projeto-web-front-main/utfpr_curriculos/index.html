@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTFPR Connect - Currículos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">UTFPR Connect</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Currículos de Alunos da UTFPR-CP</h1>
+        <p class="subtitle">Encontre o talento certo para sua equipe.</p>
+
+        <section class="filters">
+            <!-- Filtros para recrutadores -->
+            <input type="text" placeholder="Habilidade (ex: Python, Design)">
+            <input type="text" placeholder="Curso (ex: Engenharia de Software)">
+            <button>Filtrar</button>
+        </section>
+
+        <section class="resume-list" id="resume-list">
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 UTFPR Connect. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+<script src="js/data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const resumeList = document.getElementById('resume-list');
+            simulatedResumes.forEach(resume => {
+                const resumeCard = document.createElement('div');
+                resumeCard.classList.add('resume-card');
+                resumeCard.innerHTML = `
+                    <div class="resume-header">
+                        <img src="${resume.avatar}" alt="Foto do Aluno" class="avatar">
+                        <h2>${resume.name}</h2>
+                        <p class="course">${resume.course}</p>
+                    </div>
+                    <div class="resume-body">
+                        <p class="summary">${resume.summary}</p>
+                        <ul class="skills">
+                            ${resume.hardSkills.map(skill => `<li>${skill}</li>`).join('')}
+                        </ul>
+                        <a href="#" class="view-profile">Ver Perfil</a>
+                    </div>
+                `;
+                resumeList.appendChild(resumeCard);
+            });
+        });
+    </script>
+</body>
+</html>

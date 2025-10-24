@@ -1,0 +1,397 @@
+/* Variáveis de Cores da UTFPR (exemplo, ajustar conforme cores oficiais) */
+:root {
+    --primary-color: #0056b3; /* Azul escuro, similar ao logo da UTFPR */
+    --secondary-color: #007bff; /* Azul um pouco mais claro para destaques */
+    --accent-color: #28a745; /* Verde para botões de ação ou sucesso */
+    --text-color: #333;
+    --light-text-color: #666;
+    --background-color: #f8f9fa;
+    --light-gray: #e9ecef;
+    --white: #fff;
+    --border-color: #dee2e6;
+}
+
+/* Reset Básico e Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--white);
+    color: var(--primary-color);
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Main Content */
+main {
+    padding: 40px 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: var(--light-text-color);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Formulários (Login, Cadastro, Perfil) */
+.login-cadastro-form, .resume-form {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    color: var(--text-color);
+    background-color: var(--light-gray);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.login-cadastro-form p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.95em;
+    color: var(--light-text-color);
+}
+
+.login-cadastro-form p a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-cadastro-form p a:hover {
+    text-decoration: underline;
+}
+
+/* Seção de Filtros */
+.filters {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.filters h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-size: 1.8em;
+}
+
+.filters .form-group {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 0; /* Override default form-group margin */
+}
+
+.filters button {
+    width: auto;
+    padding: 12px 30px;
+    margin-top: 0;
+    flex-shrink: 0;
+}
+
+/* Lista de Currículos (Cards) */
+.resume-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.resume-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.resume-header {
+    margin-bottom: 15px;
+}
+
+.resume-card .avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid var(--primary-color);
+}
+
+.resume-card h2 {
+    font-size: 1.6em;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.resume-card .course {
+    font-size: 1em;
+    color: var(--light-text-color);
+    margin-bottom: 10px;
+}
+
+.resume-body .summary {
+    font-size: 0.95em;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    max-height: 70px; /* Limita a altura para um preview */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.resume-body .skills {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.resume-body .skills li {
+    background-color: var(--light-gray);
+    color: var(--primary-color);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+.resume-card .view-profile {
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.resume-card .view-profile:hover {
+    background-color: darken(var(--accent-color), 10%);
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Estilos para o formulário de perfil do estudante */
+.resume-form section {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.resume-form h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    border-bottom: 2px solid var(--light-gray);
+    padding-bottom: 10px;
+}
+
+.resume-form textarea {
+    resize: vertical;
+}
+
+.resume-form .submit-resume {
+    background-color: var(--accent-color);
+    margin-top: 30px;
+}
+
+.resume-form .submit-resume:hover {
+    background-color: darken(var(--accent-color), 10%);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+    }
+
+    .login-cadastro-form, .resume-form {
+        padding: 25px;
+        margin: 20px auto;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filters .form-group {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .filters button {
+        width: 100%;
+    }
+
+    .resume-list {
+        grid-template-columns: 1fr;
+    }
+
+    .resume-card {
+        padding: 20px;
+    }
+}
